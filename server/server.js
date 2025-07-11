@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routes/authRoute.js'; // auth route
 // You can import other routes here later
+import helpRoutes from './routes/helpRoutes.js'; // help route
 
 dotenv.config();
 const app = express();
@@ -14,7 +15,7 @@ app.use(express.json()); // Parse incoming JSON
 
 // 🔗 API Routes
 app.use('/api/auth', authRoutes); // Mount auth routes at /api/auth
-
+app.use('/api/help-request', helpRoutes); // Mount help routes at /api/help-request
 // 🧪 Default route (for test)
 app.get('/', (req, res) => {
   res.send('FixItLive backend is running ✅');
