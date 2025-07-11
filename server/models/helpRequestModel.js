@@ -18,11 +18,11 @@ const helpRequestSchema = new mongoose.Schema({
     type: String,
     enum: ['beginner', 'intermediate', 'advanced'],
   },
-  status: {
-    type: String,
-    enum: ['open', 'accepted', 'resolved'],
-    default: 'open',
-  },
+ status: {
+  type: String,
+  enum: ['open', 'in-progress', 'closed'], // ✅ now valid
+  default: 'open',
+},
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
